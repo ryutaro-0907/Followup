@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  followup_backend:
+    container_name: followup_backend
+    volumes:
+      - ./backend/:/usr/src/app
+    build:
+      context: ./backend
+    restart: on-failure
+    ports:
+      - 8080:8080
+    tty: true
